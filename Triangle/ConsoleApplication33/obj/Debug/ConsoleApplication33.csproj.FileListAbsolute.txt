@@ -1,0 +1,9 @@
+c:\users\илья\documents\visual studio 2013\Projects\ConsoleApplication33\ConsoleApplication33\bin\Debug\ConsoleApplication33.exe.config
+c:\users\илья\documents\visual studio 2013\Projects\ConsoleApplication33\ConsoleApplication33\bin\Debug\ConsoleApplication33.exe
+c:\users\илья\documents\visual studio 2013\Projects\ConsoleApplication33\ConsoleApplication33\bin\Debug\ConsoleApplication33.pdb
+c:\users\илья\documents\visual studio 2013\Projects\ConsoleApplication33\ConsoleApplication33\obj\Debug\ConsoleApplication33.csprojResolveAssemblyReference.cache
+c:\users\илья\documents\visual studio 2013\Projects\ConsoleApplication33\ConsoleApplication33\obj\Debug\ConsoleApplication33.exe
+c:\users\илья\documents\visual studio 2013\Projects\ConsoleApplication33\ConsoleApplication33\obj\Debug\ConsoleApplication33.pdb
+C:\Users\Илья\Desktop\Triangle\ConsoleApplication33\bin\Debug\ConsoleApplication33.exe.config
+C:\Users\Илья\Desktop\Triangle\ConsoleApplication33\obj\Debug\ConsoleApplication33.exe
+C:\Users\Илья\Desktop\Triangle\ConsoleApplication33\obj\Debug\ConsoleApplication33.pdb
