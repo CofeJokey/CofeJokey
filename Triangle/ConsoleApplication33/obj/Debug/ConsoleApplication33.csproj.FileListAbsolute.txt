@@ -7,3 +7,8 @@ c:\users\илья\documents\visual studio 2013\Projects\ConsoleApplication33\Con
 C:\Users\Илья\Desktop\Triangle\ConsoleApplication33\bin\Debug\ConsoleApplication33.exe.config
 C:\Users\Илья\Desktop\Triangle\ConsoleApplication33\obj\Debug\ConsoleApplication33.exe
 C:\Users\Илья\Desktop\Triangle\ConsoleApplication33\obj\Debug\ConsoleApplication33.pdb
+C:\Users\Илья\Desktop\TringleGit\CofeJokey\Triangle\ConsoleApplication33\bin\Debug\ConsoleApplication33.exe.config
+C:\Users\Илья\Desktop\TringleGit\CofeJokey\Triangle\ConsoleApplication33\obj\Debug\ConsoleApplication33.exe
+C:\Users\Илья\Desktop\TringleGit\CofeJokey\Triangle\ConsoleApplication33\obj\Debug\ConsoleApplication33.pdb
+C:\Users\Илья\Desktop\TringleGit\CofeJokey\Triangle\ConsoleApplication33\bin\Debug\ConsoleApplication33.exe
+C:\Users\Илья\Desktop\TringleGit\CofeJokey\Triangle\ConsoleApplication33\bin\Debug\ConsoleApplication33.pdb

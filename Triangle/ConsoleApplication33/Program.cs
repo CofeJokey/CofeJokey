@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication33
 {
-    class Points
+    class Point
     {
         public double x, y;
-        public void Point(double x, double y)
+        public Point(double x, double y)
         {
             this.x = x;
             this.y = y;
@@ -17,10 +17,10 @@ namespace ConsoleApplication33
     }
     class Edge
     {
-        public Points v1;
-        public Points v2;
+        public Point v1;
+        public Point v2;
         public double lenght;
-        public Edge(Points v1, Points v2)
+        public Edge(Point v1, Point v2)
         {
             this.v1 = v1;
             this.v2 = v2;
@@ -30,15 +30,15 @@ namespace ConsoleApplication33
     }
     class Triangle
     {
-        public Points A;
-        public Points B;
-        public Points C;
+        public Point A;
+        public Point B;
+        public Point C;
         public double ae;
         public Edge AB;
         public Edge BC;
         public Edge AC;
 
-        public Triangle(Points a, Points b, Points c)
+        public Triangle(Point a, Point b, Point c)
         {
             this.A = a;
             this.B = b;
@@ -46,6 +46,7 @@ namespace ConsoleApplication33
             this.AB = new Edge(A, B);
             this.BC = new Edge(B, C);
             this.AC = new Edge(A, C);
+            ae = this.Perimetre();
         }
 
         public void Exist()
@@ -78,30 +79,37 @@ namespace ConsoleApplication33
             return area;
         }
 
-        public void Isosceles()
+        public bool Isosceles()
         {
             if ((AB.lenght == BC.lenght) || (AB.lenght == AC.lenght) || (AC.lenght == BC.lenght))
             {
                 Console.WriteLine("Треугольник равнобедренный");
+                return true;
             }
             else
             {
                 Console.WriteLine("Треугольник не равнобедренный");
+                return false;
             }
           //  return 0;
         }
 
-        public void Right()
+        public bool Right()
         {
-            if ((AB.lenght * AB.lenght + BC.lenght * BC.lenght == AC.lenght * AC.lenght) 
-                || (AB.lenght * AB.lenght + AC.lenght * AC.lenght == BC.lenght * BC.lenght)
-                || (AC.lenght * AC.lenght + BC.lenght * BC.lenght == AB.lenght * AB.lenght))
+            //if ((AB.lenght * AB.lenght + BC.lenght * BC.lenght == AC.lenght * AC.lenght)
+            //    || (AB.lenght * AB.lenght + AC.lenght * AC.lenght == BC.lenght * BC.lenght)
+            //    || (AC.lenght * AC.lenght + BC.lenght * BC.lenght == AB.lenght * AB.lenght))
+            if ((Math.Round(this.Area(),2) == Math.Round(AB.lenght * BC.lenght / 2,2))
+                || (Math.Round(this.Area(), 2) == Math.Round(AC.lenght * BC.lenght / 2, 2))
+                || (Math.Round(this.Area(), 2) == Math.Round(AB.lenght * AC.lenght / 2, 2)))
             {
                 Console.WriteLine("Треугольник прямоугольный");
+                return true;
             }
             else
             {
                 Console.WriteLine("Треугольник не прямоугольный");
+                return false;
             }
         }
 
