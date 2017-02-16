@@ -12,3 +12,4 @@ C:\Users\Илья\Desktop\TringleGit\CofeJokey\Triangle\ConsoleApplication33\obj
 C:\Users\Илья\Desktop\TringleGit\CofeJokey\Triangle\ConsoleApplication33\obj\Debug\ConsoleApplication33.pdb
 C:\Users\Илья\Desktop\TringleGit\CofeJokey\Triangle\ConsoleApplication33\bin\Debug\ConsoleApplication33.exe
 C:\Users\Илья\Desktop\TringleGit\CofeJokey\Triangle\ConsoleApplication33\bin\Debug\ConsoleApplication33.pdb
+C:\Users\Илья\Desktop\TringleGit\CofeJokey\Triangle\ConsoleApplication33\obj\Debug\ConsoleApplication33.csprojResolveAssemblyReference.cache

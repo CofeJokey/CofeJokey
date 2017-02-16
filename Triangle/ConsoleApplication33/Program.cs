@@ -46,31 +46,32 @@ namespace ConsoleApplication33
             this.AB = new Edge(A, B);
             this.BC = new Edge(B, C);
             this.AC = new Edge(A, C);
-            ae = this.Perimetre();
+            ae = this.GetPerimetre();
         }
 
-        public void Exist()
-        {
+        public bool GetExist()
+    {
         if (AB.lenght <= 0 || AC.lenght <= 0 || BC.lenght <= 0)
         {
 
                 Console.WriteLine("Треугольник не существует");
-                Environment.Exit(0);
+                return false;
         }
         else if (AB.lenght + BC.lenght <= AC.lenght || AB.lenght + AC.lenght <= BC.lenght || AC.lenght + BC.lenght <= AB.lenght)
         {
             Console.WriteLine("Треугольник не существует");
-            Environment.Exit(0);
+            return false;
         }
-}
-        public double Perimetre()
+        return true;
+    }
+        public double GetPerimetre()
         {
             double primente = AB.lenght + AC.lenght + BC.lenght;
             ae = primente;
             return primente;
         }
 
-        public double Area()
+        public double GetArea()
         {
             double p = ae / 2;
             double area = Math.Sqrt(p * (p - AB.lenght) * (p - BC.lenght) * (p - AC.lenght));
@@ -79,7 +80,7 @@ namespace ConsoleApplication33
             return area;
         }
 
-        public bool Isosceles()
+        public bool checkIsosceles()
         {
             if ((AB.lenght == BC.lenght) || (AB.lenght == AC.lenght) || (AC.lenght == BC.lenght))
             {
@@ -91,17 +92,21 @@ namespace ConsoleApplication33
                 Console.WriteLine("Треугольник не равнобедренный");
                 return false;
             }
-          //  return 0;
+         
         }
 
-        public bool Right()
+      
+
+
+        public bool checkRight()
         {
             //if ((AB.lenght * AB.lenght + BC.lenght * BC.lenght == AC.lenght * AC.lenght)
             //    || (AB.lenght * AB.lenght + AC.lenght * AC.lenght == BC.lenght * BC.lenght)
-            //    || (AC.lenght * AC.lenght + BC.lenght * BC.lenght == AB.lenght * AB.lenght))
-            if ((Math.Round(this.Area(),2) == Math.Round(AB.lenght * BC.lenght / 2,2))
-                || (Math.Round(this.Area(), 2) == Math.Round(AC.lenght * BC.lenght / 2, 2))
-                || (Math.Round(this.Area(), 2) == Math.Round(AB.lenght * AC.lenght / 2, 2)))
+            //    || (AC.lenght * AC.lenght + BC.lenght * BC.lenght == AB.lenght * AB.lenght)) 
+
+            if ((Math.Round(this.GetArea(), 2) == Math.Round(AB.lenght * BC.lenght / 2, 2))
+                || (Math.Round(this.GetArea(), 2) == Math.Round(AC.lenght * BC.lenght / 2, 2))
+                || (Math.Round(this.GetArea(), 2) == Math.Round(AB.lenght * AC.lenght / 2, 2)))
             {
                 Console.WriteLine("Треугольник прямоугольный");
                 return true;
