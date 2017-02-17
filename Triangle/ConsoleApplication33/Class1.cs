@@ -54,19 +54,19 @@ namespace ConsoleApplication33
                 if (triangles[i].GetExist())
                 {
 
-                    Console.WriteLine("Площадь треугольника = {0} ", triangles[i].GetArea());
-                    Console.WriteLine("Периметр Треугольника = {0} ", triangles[i].GetPerimetre());
+                    Console.WriteLine("Площадь треугольника = {0} ", triangles[i].Area());
+                    Console.WriteLine("Периметр Треугольника = {0} ", triangles[i].Perimetre());
                
 
-                if (triangles[i].checkIsosceles())
+                if (triangles[i].Isosceles())
                     {
-                        sumAreas += triangles[i].GetArea();
+                        sumAreas += triangles[i].Area();
                         countIsosceles++;
                     }
 
-                    if (triangles[i].checkRight())
+                    if (triangles[i].Right())
                     {
-                        sumPerimetres += triangles[i].GetPerimetre();
+                        sumPerimetres += triangles[i].Perimetre();
                         countRight++;
                     }
              
