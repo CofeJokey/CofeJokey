@@ -17,14 +17,14 @@ namespace ConsoleApplication33
     }
     class Edge
     {
-        public Point v1;
-        public Point v2;
-        public double lenght;
-        public Edge(Point v1, Point v2)
+        public Point p1;
+        public Point p2;
+        public double length;
+        public Edge(Point p1, Point p2)
         {
-            this.v1 = v1;
-            this.v2 = v2;
-            lenght = Math.Sqrt(Math.Pow(v2.x - v1.x, 2) + Math.Pow(v2.y - v1.y, 2));
+            this.p1 = p1;
+            this.p2 = p2;
+            length = Math.Sqrt(Math.Pow(p2.x - p1.x, 2) + Math.Pow(p2.y - p1.y, 2));
         }
 
     }
@@ -51,13 +51,13 @@ namespace ConsoleApplication33
 
         public bool GetExist()
     {
-        if (AB.lenght <= 0 || AC.lenght <= 0 || BC.lenght <= 0)
+        if (AB.length <= 0 || AC.length <= 0 || BC.length <= 0)
         {
 
                 Console.WriteLine("Треугольник не существует");
                 return false;
         }
-        else if (AB.lenght + BC.lenght <= AC.lenght || AB.lenght + AC.lenght <= BC.lenght || AC.lenght + BC.lenght <= AB.lenght)
+        else if (AB.length + BC.length <= AC.length || AB.length + AC.length <= BC.length || AC.length + BC.length <= AB.length)
         {
             Console.WriteLine("Треугольник не существует");
             return false;
@@ -66,7 +66,7 @@ namespace ConsoleApplication33
     }
         public double GetPerimetre()
         {
-            double primente = AB.lenght + AC.lenght + BC.lenght;
+            double primente = AB.length + AC.length + BC.length;
             ae = primente;
             return primente;
         }
@@ -74,7 +74,7 @@ namespace ConsoleApplication33
         public double GetArea()
         {
             double p = ae / 2;
-            double area = Math.Sqrt(p * (p - AB.lenght) * (p - BC.lenght) * (p - AC.lenght));
+            double area = Math.Sqrt(p * (p - AB.length) * (p - BC.length) * (p - AC.length));
 
             
             return area;
@@ -82,7 +82,7 @@ namespace ConsoleApplication33
 
         public bool checkIsosceles()
         {
-            if ((AB.lenght == BC.lenght) || (AB.lenght == AC.lenght) || (AC.lenght == BC.lenght))
+            if ((AB.length == BC.length) || (AB.length == AC.length) || (AC.length == BC.length))
             {
                 Console.WriteLine("Треугольник равнобедренный");
                 return true;
@@ -100,13 +100,13 @@ namespace ConsoleApplication33
 
         public bool checkRight()
         {
-            //if ((AB.lenght * AB.lenght + BC.lenght * BC.lenght == AC.lenght * AC.lenght)
-            //    || (AB.lenght * AB.lenght + AC.lenght * AC.lenght == BC.lenght * BC.lenght)
-            //    || (AC.lenght * AC.lenght + BC.lenght * BC.lenght == AB.lenght * AB.lenght)) 
+            //if ((AB.length * AB.length + BC.length * BC.length == AC.length * AC.length)
+            //    || (AB.length * AB.length + AC.length * AC.length == BC.length * BC.length)
+            //    || (AC.length * AC.length + BC.length * BC.length == AB.length * AB.length)) 
 
-            if ((Math.Round(this.GetArea(), 2) == Math.Round(AB.lenght * BC.lenght / 2, 2))
-                || (Math.Round(this.GetArea(), 2) == Math.Round(AC.lenght * BC.lenght / 2, 2))
-                || (Math.Round(this.GetArea(), 2) == Math.Round(AB.lenght * AC.lenght / 2, 2)))
+            if ((Math.Round(this.GetArea(), 2) == Math.Round(AB.length * BC.length / 2, 2))
+                || (Math.Round(this.GetArea(), 2) == Math.Round(AC.length * BC.length / 2, 2))
+                || (Math.Round(this.GetArea(), 2) == Math.Round(AB.length * AC.length / 2, 2)))
             {
                 Console.WriteLine("Треугольник прямоугольный");
                 return true;
