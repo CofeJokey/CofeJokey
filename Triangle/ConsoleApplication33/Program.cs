@@ -6,100 +6,94 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication33
 {
-    class Triangle
+    class Program
     {
-         Point A;
-         Point B;
-         Point C;
-        // double ae;
-         Edge AB;
-         Edge BC;
-         Edge AC;
-
-        public Triangle(Point a, Point b, Point c)
+      
+        static void Main(string[] args)
         {
-            this.A = a;
-            this.B = b;
-            this.C = c;
-            this.AB = new Edge(A, B);
-            this.BC = new Edge(B, C);
-            this.AC = new Edge(A, C);
-          //  ae = this.GetPerimetre();
-        }
-
-        public bool GetExist()
-    {
-        if (AB.length <= 0 || AC.length <= 0 || BC.length <= 0)
-        {
-
-                Console.WriteLine("Треугольник не существует");
-                return false;
-        }
-        else if (AB.length + BC.length <= AC.length || AB.length + AC.length <= BC.length || AC.length + BC.length <= AB.length)
-        {
-            Console.WriteLine("Треугольник не существует");
-            return false;
-        }
-        return true;
-    }
-        public double Perimetre()
-        {
-            double primente = AB.length + AC.length + BC.length;
-          
-            return primente;
-        }
-
-        public double Area()
-        {
-            double p = Perimetre() / 2;
-            double area = Math.Sqrt(p * (p - AB.length) * (p - BC.length) * (p - AC.length));
+            //var tringle = new Triangle(new Point(1, 0), new Point(0, 4), new Point(2, 0));
+            //tringle.Exist();
+            //Console.WriteLine("Периметр = " + tringle.Perimetre());
+            //Console.WriteLine("Площадь = " + tringle.Area());
+            //tringle.Isosceles();
+            //tringle.Right();
+            
+            Console.WriteLine("Введите количество треугольников");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int counter = n;
+            Triangle[] triangles=new Triangle[n];
 
             
-            return area;
-        }
-
-        public bool Isosceles()
-        {
-            if ((AB.length == BC.length) || (AB.length == AC.length) || (AC.length == BC.length))
+            for (int i = 0; i < n;i++ )
             {
-                Console.WriteLine("Треугольник равнобедренный");
-                return true;
+                Console.WriteLine("Введите точки");
+                string[] tmp;
+                tmp = Console.ReadLine().Split(new Char[] { ' ' });
+                int xa = Convert.ToInt32(tmp[0]), ya = Convert.ToInt32(tmp[1]);
+                tmp = Console.ReadLine().Split(new Char[] { ' ' });
+                int xb = Convert.ToInt32(tmp[0]), yb = Convert.ToInt32(tmp[1]);
+                tmp = Console.ReadLine().Split(new Char[] { ' ' });
+                int xc = Convert.ToInt32(tmp[0]), yc = Convert.ToInt32(tmp[1]); 
+                 triangles[i] = new Triangle(
+                    new Point(xa, ya),
+                    new Point(xb, yb),
+                    new Point(xc, yc));
             }
-            else
+            Console.WriteLine("***************");
+
+            int countRight = 0;
+            double sumPerimetres = 0;
+            int countIsosceles = 0;
+            double sumAreas = 0;
+
+
+            for (int i = 0; i < triangles.Length;i++ )
             {
-                Console.WriteLine("Треугольник не равнобедренный");
-                return false;
+                Console.WriteLine();
+                Console.WriteLine("Треугольник № {0} ", i + 1);
+                if (triangles[i].GetExist())
+                {
+
+                    Console.WriteLine("Площадь треугольника = {0} ", triangles[i].Area());
+                    Console.WriteLine("Периметр Треугольника = {0} ", triangles[i].Perimetre());
+               
+
+                if (triangles[i].Isosceles())
+                    {
+                        sumAreas += triangles[i].Area();
+                        countIsosceles++;
+                    }
+
+                    if (triangles[i].Right())
+                    {
+                        sumPerimetres += triangles[i].Perimetre();
+                        countRight++;
+                    }
+             
+                }
+                else 
+                { 
+                    Console.WriteLine("Не существует");
+                    counter--;
+                }
+
+                
+                Console.WriteLine();
+                Console.WriteLine("***************");
+              
+                
             }
-         
-        }
-
-      
-
-
-        public bool Right()
-        {
-            //if ((AB.length * AB.length + BC.length * BC.length == AC.length * AC.length)
-            //    || (AB.length * AB.length + AC.length * AC.length == BC.length * BC.length)
-            //    || (AC.length * AC.length + BC.length * BC.length == AB.length * AB.length)) 
-
-            if ((Math.Round(this.Area(), 2) == Math.Round(AB.length * BC.length / 2, 2))
-                || (Math.Round(this.Area(), 2) == Math.Round(AC.length * BC.length / 2, 2))
-                || (Math.Round(this.Area(), 2) == Math.Round(AB.length * AC.length / 2, 2)))
-            {
-                Console.WriteLine("Треугольник прямоугольный");
-                return true;
-            }
-            else
-            {
-                Console.WriteLine("Треугольник не прямоугольный");
-                return false;
-            }
-        }
-
-
+            Console.WriteLine();
+            Console.WriteLine("Средний Периметр = " + sumPerimetres / countRight);
+            Console.WriteLine("Средняя Площадь = " + sumAreas / countIsosceles);
+            Console.WriteLine();
+          //  Console.WriteLine("Количество треугольников " +n);
+            Console.WriteLine("Количество треугольников " + counter);
+            sumPerimetres = 0; countRight = 0;
+            sumAreas = 0; countIsosceles = 0;
+         }
         
 
     }
-
 
 }
